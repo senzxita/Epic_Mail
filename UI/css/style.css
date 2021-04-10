@@ -1,0 +1,431 @@
+@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root{
+    --danger: #dc3545;
+    --primary: #007bff;
+    --warning: #ffc107;
+    --success: #28a745;
+    --black: #32383e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.primary-col {
+  color: var(--primary)
+}
+
+.danger-col{
+  color: var(--danger);
+}
+
+.dark-col {
+    color: #2f2e2b;;
+}
+
+.light-blue {
+    color:#3261c8b5;
+}
+
+.warning-col {
+  color: var(--warning);
+}
+
+.success-col {
+  color: var(--success);
+}
+
+.black {
+  color: var(--black)
+}
+
+a {
+  text-decoration: none;
+  color: #130505d4;
+}
+
+a:hover {
+  color: black;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.flex {
+  display: flex;
+}
+
+.brand-name {
+  font-family: Helvetica, sans-serif;
+  text-shadow: 0px 2px 2px black;
+  background: #80808017;
+  padding: 1px;
+  box-shadow: 0px 0px 374px grey;
+}
+
+.brand-name-1{
+    font-family: Helvetica, sans-serif;
+    text-shadow: 0px 2px 2px black;
+    background: #80808017;
+    padding: 1px;
+    box-shadow: 0px 0px 374px grey;
+    color: white;
+}
+
+.brand-image {
+    background-image: url('../img/email3.png');
+    width: 30px;
+    height: 30px;
+    background-position: center;
+    background-size: cover;
+    margin-left: 6px;
+    transform: rotate(-20deg);
+}
+
+.nav-header {   
+  box-shadow: 0px 0px 2px grey;
+  padding: 0 20px;
+}
+
+.main {
+    background: url('../img/email.png');
+    background-repeat: no-repeat;
+    height: 100vh;
+    filter: brightness(65%);
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+}
+
+.index-body {
+    position: relative;
+    color: white;
+    height: 100vh;
+}
+
+.index-content {
+    display: flex;
+    justify-content: center;
+    margin-top: -80px;
+    box-sizing: content-box;
+}
+.index-sub-title {
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+}
+
+.index-sub-cont {
+    margin-bottom: 40px;
+}
+
+.footer {
+    padding: 0 20px
+}
+
+.form-cover{
+  border: 1px solid #dadce0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px grey;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  height: 2rem;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+.contact-us:hover {
+    color: #32383e;
+}
+
+
+.btn{
+    background: #3261c8;
+    padding: 0.6rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    box-shadow: 0px 1px 7px black;
+    font-size: medium;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* .user-panel {
+
+}
+
+.container {
+
+} */
+
+.prof-img {
+    width: 35px;
+    height: 35px;
+    background-image: url('../img/avata.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 30px;
+}
+
+.txt-white {
+    color: white;
+}
+
+.join-us {
+    padding: 5px 43px;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.width-fit-content {
+    width: fit-content
+}
+.inline-block {
+    display: inline-block
+}
+
+.join-us:hover{
+    border: 1px solid black;
+}
+
+.btn-default{
+    background-color: #b5b9bb;;
+    border-color: #b5b9bb;
+    color: black;
+}
+
+.disabled{
+cursor: text;
+}
+
+.btn-sm{
+    padding: .25rem .5rem;
+    font-size: .875rem ;
+    line-height: 1.5;
+    border-radius: .2rem;
+}
+
+.btn-danger{
+    background-color: #b5b9bb;
+    border-color: #b5b9bb;
+    color: black;
+}
+
+.btn-success{
+    background-color: #3261c8;;
+    border-color: #3261c8;
+    color: white;
+}
+
+.index-btn {
+    padding: 13px 46px;
+    border-radius: 20px;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.li-sty-none {
+  list-style: none;
+}
+
+.align-self{
+     align-self: center;
+}
+
+.align-item-center{
+    align-items: center;
+}
+
+.flex-dir-col {
+    flex-direction: column;
+}
+
+
+.justify-content-sa{
+    justify-content: space-around;
+}
+
+.justify-content-flex-end{
+    justify-content: flex-end;
+}
+
+.justify-content-ctr {
+    justify-content: center
+}
+.justify-content-sb{
+    justify-content: space-between;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+.col-2 {
+    width: 16.66%;
+}
+.col-3 {
+    width: 25%;
+}
+.col-4 {
+    width: 33.33%;
+}
+.col-5 {
+    width: 41.66%;
+}
+.col-6 {
+    width: 50%;
+}
+.col-7 {
+    width: 58.33%;
+}
+.col-8 {
+    width: 66.66%;
+}
+.col-9 {
+    width: 75%;
+}
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+}
+
+.p-0{
+    padding: 0px;
+}
+
+.p-5{
+    padding: .5%;
+}
+.p-25{
+    padding: 2.5%;
+}
+
+.pr-5 {
+    padding-right: .5%;
+}
+
+.pl-5{
+    padding-left: .5%;
+}
+
+.pt-5{
+    padding-top: .5%;
+}
+
+.pb-5{
+    padding-bottom: .5%;
+}
+
+
+.m-0{
+    margin: 0px;
+}
+
+.m-15{
+    margin: 1.5%;
+}
+
+.mlr{
+    margin: 0 1%;
+}
+
+.m-5{
+    margin: .5%;
+}
+
+.mr-5 {
+    margin-right: .5%;
+}
+.mr-25 {
+    margin-right: 2.5%;
+}
+
+.ml-5{
+    margin-left: .5%;
+}
+.ml-25{
+    margin-left: 2.5%;
+}
+
+.mt-5{
+    margin-top: .5%;
+}
+.mt-25{
+    margin-top: 2.5%;
+}
+.mt-55 {
+    margin-top: 5.5%;
+}
+
+.mb-5{
+    margin-bottom: .5%;
+}
+
+.mb-0 {
+    margin-bottom: 0
+}
+.mb-25{
+    margin-bottom: 2.5%;
+}
+
+.ma {
+    margin: auto;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .brand-name {
+        font-size: 20px;
+    }
+
+    .brand-image {
+        width: 18px;
+        height: 18px;
+    }
+
+    .index-sub-title {
+        font-size: 38px; 
+    }
+
+    .index-btn {
+        padding: 11px 37px;
+    }
+
+    .form-cover {
+        margin-top: 26%;
+    }
+
+    .join-us {
+        padding: 1px 26px; 
+    }
+
+    [class*="col-"] {
+        width: 83%;
+    }
+
+    .sign-in-out {
+        font-size: 15px;
+    }
+}

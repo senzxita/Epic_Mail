@@ -1,0 +1,583 @@
+:root{
+    --danger: #dc3545;
+    --primary: #007bff;
+    --warning: #ffc107;
+    --success: #28a745;
+    --black: #32383e; 
+}
+
+.profile-section {
+    background: white;
+    width: 120px;
+    position: absolute;
+    right: 10px;
+    top: 68px;
+    border-radius: 0 0 3px 3px;
+    height: 0;
+    overflow: hidden;
+    z-index: 200;
+    transition: height 0.3s linear 0s;
+    border: 1px solid #00000054;
+}
+
+.profile-section > div > ul > li {
+    list-style: none;
+    padding: 6px;
+    margin: 1px 1px 1px 1px;
+    background: #868d9478;
+    border-radius: 2px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.main-flex {
+  display: flex;
+}
+
+.profile-section > div > ul {
+  padding: 0;
+  margin: 0;
+  text-align: start;
+}
+.main-body {
+  display: flex;
+}
+
+/* .left-aside{
+
+} */
+
+.space-100 {
+  width: 100%;
+  height: 65px;
+}
+
+/* .right-aside {
+
+} */
+
+.left-side-panel {
+  padding: 10px 5px;
+  /* background: violet; */
+}
+
+.left-side-panel > ul  {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-side-panel > ul > li {
+    background: #1d1b1b17;
+    border-radius: 0 23px 23px 0;
+    padding: 7px;
+    margin-bottom: 1px;
+    cursor: pointer;
+}
+
+.left-side-panel > ul > li:hover {
+  background: #1d1b1b26;
+}
+
+.left-side-panel > ul > .inbox-active {
+  background: #007bff78;
+}
+
+.left-side-panel > ul > .inbox-active:hover {
+  background: #007bff78;
+}
+
+.right-in-main {
+  /* background: tomato; */
+    padding: 12px 5px;
+}
+
+.message-body {
+  max-height:70vh;
+  overflow-y: scroll;
+}
+
+.message-list {
+  padding: 9px 9px;
+  background: #0a0a0a24;
+  border-left: 6px solid #0000004d;
+  box-shadow: 0px 1px 1px black;
+}
+
+.arrow-cover {
+  width: fit-content;
+  margin-right: 6px;
+}
+
+.message-list > span span {
+  display: flex;
+}
+
+.message-list:hover {
+  border-left: 6px solid #007bff78;
+  background-color: #0a0a0a2e;
+  box-shadow: 1px 1px 1px black;
+  transform: scale(1.004);
+  margin: 0 4px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray; 
+  border-radius: 10px;
+}
+
+.unread .read, .delete, .arrow, .message-list {
+  cursor: pointer;
+}
+
+.delete {
+  color: var(--black);
+}
+
+.delete:hover {
+  color: var(--danger);
+}
+
+.mail-body, .mail-head, .elipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mail-head {
+  padding: 0 10px 0 0px;
+}
+
+.mail-body {
+  padding: 0 24px 0 15px;
+}
+
+.read {
+  color: #2f2e2b;
+}
+
+.unread {
+  color: var(--danger);
+}
+
+.draft-t {
+  color: var(--danger)
+}
+
+.compose-container {
+  display: flex;    
+  align-items: flex-end;
+  margin-left: 13px;
+}
+
+.compose {
+  height: fit-content;
+  border-radius: 30px;
+  outline: none;
+}
+
+.compose:hover {
+  box-shadow: -3px 3px 12px black;  
+}
+
+.email-body {
+  width: 36%;
+  position: absolute;
+  bottom: 0px;
+  right: 55px;
+  z-index: 220;
+}
+
+.email-header {
+  width: 100%;
+  background: #000000f2;
+  height: 34px;
+  border-radius: 10px 10px 0 0;
+  color: white;
+}
+
+.email-header > p {
+  font-weight: bold;
+  padding: 0px 1px 0 21px;
+  display: inline-block;
+  margin: 0;
+  /* margin-top: 10px;  */
+}
+
+.form-ctrl {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
+.email-header > span {
+  margin: 0 22px 0 0;
+  cursor: pointer;
+}
+
+.email-main-body {
+  width: 100%;
+  background: #6a6f6b;
+  padding: 10px;
+}
+
+.mobile-create {
+  display: none;
+}
+
+.start-text {
+  text-align: start;
+}
+
+.retract {
+  color: var(--danger)
+}
+
+.retracted {
+  color: var(--success)
+}
+
+.ind-contact-all {
+  max-height:50vh;
+  overflow-y: scroll;
+}
+
+.ind-contact-grp {
+  max-height:50vh;
+  overflow-y: scroll;
+}
+
+.contact-head {
+  width: 302px;
+  height: 55px;
+  background: #1d1b1b26;
+  margin-right: 2px;
+  color: black;
+  cursor: pointer;
+}
+
+.contact-head-active {
+  color: black;
+  background: #007bff78;
+}
+
+.ab-avatar {
+  width: 46px;
+  height: 46px;
+  background: steelblue;
+  color: white;
+  font-size: 22px;
+  border-radius: 61px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.contact-info {
+  width: 100%;
+}
+
+.contact-info > button {
+  height: fit-content;
+}
+.contact-info > h4 {
+  padding: 0px;
+  margin: 0px 0 0 10px;
+  color: white;
+}
+
+.contact-info > div > button {
+  margin-right: 10px;
+}
+
+.ind-contact {
+  width: 59.09%;
+  height: 55px;
+  margin: 4px -3px 0 0;
+  padding: 5px 8px;
+  background: #32383e;
+  box-shadow: 0px 1px 1px black;
+}
+
+.ind-contact-width {
+  width:225%;
+}
+
+.add-contact {
+  width: 50px;
+  height: 50px;
+  background: #007bff;
+  border-radius: 50px;
+  font-size: 15px;
+  text-align: center;
+  line-height: 50px;
+  box-shadow: -2px 0px 1px black;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 239px;
+  bottom: 233px;
+  z-index: 150;
+}
+
+.elipsis {
+  min-width: 85px;
+  max-width: 330px;
+}
+
+.addIndContact {
+  width: 300px;
+  background: #32383e;
+  padding: 11px;
+  position: absolute;
+  color: white;
+  border-radius: 2px;
+  bottom: 187px;
+  right: 305px;
+  z-index: 150;
+}
+
+.addIndContact > div > h4 {
+  margin: 0px;
+  padding: 0px;
+}
+
+.addIndContact > div > span {
+  cursor: pointer;
+}
+
+.addIndContact > form > button {
+  float: right;
+  margin-top: 3px;
+}
+
+.addIndContact > form > label {
+  margin-top: 3px;
+}
+
+.Email-message {
+  width: 100%;
+  height: -webkit-fill-available;
+  /* background: #0000000f; */
+}
+
+.Email-message > div {
+  border: 1px solid gray;
+}
+
+.go-back {
+  width: 30px;
+  cursor: pointer;
+  padding: 6px 8px;
+  margin: 3px 3px 0 3px;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.go-back:hover {
+  background: grey ;
+}
+
+.read-mailContent {
+/* background: steelblue; */
+  padding: 8px 30px;
+  height: inherit;
+}
+
+.tag{
+  background: #8083867d;
+  padding: 2px 5px;
+  border-radius: 30px;
+}
+
+.mailContent {
+  margin-top: 15px;
+}
+
+.group-members {
+  width: 59.09%;
+  margin: 4px -3px 0 0;
+  background: #32383ecc;
+  padding: 10px 10px;
+}
+
+.group-members > div > h3 {
+  padding: 0;
+  margin: 0 0 10px 0;
+  /* border-bottom: 1px solid; */
+  color: white;
+}
+
+.members-list {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.a-member {
+  width: fit-content;
+  background: #bac2ca;
+  padding: 6px 11px;
+  border-radius: 5px;
+  box-shadow: -1px 1px 1px black;
+  margin: 4px 4px 0 0;
+}
+
+.a-member > p {
+  padding: 0 20px 0 0;
+  margin: 0;
+}
+
+.a-member > span {
+  background: aliceblue;
+  padding: 0 7px;
+  border-radius: 8px;
+  box-shadow: -2px 0px 1px black;
+
+}
+
+.a-member > span:hover {
+  background: #dc3545;
+
+}
+
+.add-member > select {
+  padding: 5px 9px;
+  border-radius: 5px;
+}
+
+.add-member > span {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+}
+
+.grp-back {
+  height: fit-content;
+  width: fit-content;
+  padding: 5px 7px;
+  background: aliceblue;
+  border-radius: 26px;
+}
+
+.grp-back:hover {
+  background: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .profile-section {
+        top: 45px;
+    }
+
+    .group-members {
+      width: 99%;
+    }
+
+    .main-body{
+      display: block;
+    }
+
+    .message-body {
+      max-height: 81vh;
+    }
+    .message-list {
+      margin-bottom: 4px;
+    }
+
+    .main-flex {
+      display: block;
+    }
+
+    .mail-body {
+      padding: 0;
+    }
+    
+    .right-in-main-lt {
+      display: none;
+    }
+
+    .space-100 {
+      display: none
+    }
+
+    [class*="col-"] {
+        width: 100%;
+    }
+
+    .email-body {
+      display: none;
+    }
+
+    .mobile-create {
+      display: block;
+      width: fit-content;
+      padding: 20px;
+      background: var(--danger);
+      border-radius: 30px;
+      box-shadow: -1px -2px 2px black;
+      position: absolute;
+      bottom: 32px;
+      right: 15px;
+    }
+
+    .add-contact {
+      bottom: 103px;
+      right: 15px;
+    }
+
+    .mobile-create:hover {
+      box-shadow: -4px 3px 9px black;
+    }
+
+    .ind-contact {
+      width: 99%;
+    }
+
+    .ind-contact-width {
+      width: 229%;
+    }
+
+    .email-body{
+      width: 89%;
+      right: 20px;
+      bottom: 96px;
+    }
+
+    .left-side-panel > ul {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .left-side-panel > ul > li {
+      border-radius: 0 0 0 0;
+      text-align: center;
+    }
+
+    .elipsis {
+      max-width: 85px;
+    }
+
+    .addIndContact{
+     bottom: 187px;
+    right: 32px;
+    box-shadow: -2px 0px 6px white;
+    }
+
+    .arrow-cover {
+      width: fit-content;
+      margin-right: 6px;
+    }
+}

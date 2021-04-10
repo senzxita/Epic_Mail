@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>inbox Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/custom.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/modal.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="css/app.css" />
+  <script src=""></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="nav-header">
+      <div class="flex justify-content-sb">
+        <a href="./index.html">
+          <h1 class="brand-name flex">
+            <span class="black">EPIC Mail</span>
+            <span></span>
+              <span class="brand-image">
+                <span></span>
+              </span>
+          </h1>
+        </a>
+        <div class="align-self user-panel flex align-item-center">
+          <div class="prof-img mr-25"></div>
+          <h3 class="m-0 mr-25">
+            <a href="#" class="li-sty-none" id="user-name" style="text-transform: capitalize; overflow: hidden;
+              text-overflow: ellipsis; white-space: nowrap; display: block; width: 92px;"></a>
+          </h3>
+          <span id="profile-panel">
+            <a href="#" id="drop-down">
+              &#9650;
+            </a>
+          </span>
+        </div>
+      </div>
+    </header>
+    <div class="profile-section" id="profile-section">
+      <div>
+        <ul class="">
+          <li>
+            <a id="user-email" style="font-size:55%;">
+            </a>
+          </li>
+          <li onclick="logout()">
+            <a>
+              Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <main>
+      <div class="main-body">
+        <div class="col-2 left-aside">
+          <div class="space-100 compose-container">
+            <button class="btn compose" onclick="createContent()">compose</button>
+          </div>
+          <div class="left-side-panel">
+            <ul>
+              <li class="inbox-active listForJs" id="inbox" onclick="displayPanel('inbox')">
+                <a href="#">
+                  <i class="fas fa-inbox mr-5 dark-col"></i>&nbsp;&nbsp;&nbsp;Inbox
+                </a>
+              </li>
+              <li class=" listForJs" id="draft" onclick="displayPanel('draft')" >
+                <a href="#">
+                  <i class="fas fa-bookmark mr-5 dark-col"></i> &nbsp;&nbsp;&nbsp;Draft
+                </a>
+              </li>
+              <li class="listForJs" id="sent" onclick="displayPanel('sent')" >
+                <a href="#">
+                <i class="fas fa-plane-departure mr-5 dark-col"></i> &nbsp;Sent
+                </a>
+              </li>
+              <li class=" listForJs" id="contact" onclick="displayPanel('contact')" >
+                <a href="#">
+                  <i class="fas fa-address-book mr-5 dark-col"></i>&nbsp;&nbsp;&nbsp;Contacts
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-10 right-aside" >
+          <div class="space-100"></div>
+          <div class="right-in-main flex">
+            <div class="col-11 message-body">
+
+              <div class="displayForJs" id="inbox-message">
+              </div>
+
+              <div class="displayForJs Email-message readMail" id="inbox-display" style="display:none">
+              </div>
+
+              <div class="displayForJs Email-message sentMail" id="sent-display" style="display:none">
+              </div>
+
+              <div class="displayForJs" id="draft-message" style="display:none">
+
+                <div class="main-flex message-list" onclick="openDraft()">
+                  <span class="col-3 flex">
+                    <span class="col-1 arrow-cover flex"><i class="fas fa-arrow-circle-right arrow mr-25"></i>
+                      <i class="fas fa-bookmark dark-col ml-25"></i>
+                    </span>
+                    <span class="col-10 mail-head draft-t">DRAFT</span>
+                  </span>
+                  <article class="col-7 mail-body">some content added here again </article>
+                  <span class="col-2 flex justify-content-sb">
+                    <span class="col-2 center-text start-text" title="delete"><i class="fas fa-trash delete"></i></span>
+                    <span class="col-8 center-text start-text">02 : 00 am</span>
+                  </span>
+                </div>
+
+              </div>
+
+              <div class="displayForJs" id="sent-message" style="display:none;">
+
+                <div class="main-flex message-list">
+                  <span class="col-3 flex">
+                    <span class="col-1 arrow-cover flex"><i class="fas fa-arrow-circle-right arrow mr-25"></i>
+                      <i class="fas fa-exclamation-triangle ml-25 danger-col" title="retracted Message"></i>
+                    </span>
+                    <span class="col-9 mail-head draft-t">To : Angelo Frank</span>
+                  </span>
+                  <article class="col-7 mail-body">Awesome message from us  added here again </article>
+                  <span class="col-2 flex justify-content-sb">
+                    <span class="col-2 center-text start-text" title="delete"><i class="fas fa-trash delete"></i></span>
+                    <span class="col-2 center-text start-text retracted" title="ReSend Message">
+                      <i class="fas fa-share-square"></i>
+                    </span>
+                    <span class="col-6 center-text start-text">14 : 04 pm</span>
+                  </span>
+                </div>
+
+              </div>
+
+              <div class="displayForJs" id="contact-message" style="display:none">
+                <div class="flex justify-content-ctr">
+                  <div class="contact-head center-text contact-head-active" id="ind-contact-all" onclick="switchContact('ind-contact-all')">
+                    <h3>Contacts</h3>
+                  </div>
+                  <div class="contact-head center-text" id="ind-contact-grp" onclick="switchContact('ind-contact-grp')">
+                    <h3>Groups</h3>
+                  </div>
+                </div>
+
+                <div class="add-contact" onclick="openAddForm()">
+                  <i class="fas fa-plus"></i>
+                </div>
+
+                <div class="addIndContact formAddContactJs ind-contact-all-1" style="display:none">
+                  <div class="flex justify-content-sb mb-25">
+                    <h4>Add contact</h4>
+                    <span onclick="closeAddPanel()">X</span>
+                  </div>
+                  <form onsubmit="event.preventDefault(); addContact()">
+                    <label for="addIndContact">Email</label>
+                    <input type="email" id="contactEmail" required class="form-control mt-25" placeholder="user@email.com">
+                    <button type="submit" class="btn btn-sm btn-success">Add</button>
+                  </form>
+                </div>
+
+                <div class="addIndContact  formAddContactJs ind-contact-grp-1" style="display:none;">
+                  <div class="flex justify-content-sb mb-25">
+                    <h4>Create Group</h4>
+                    <span onclick="closeAddPanel()">X</span>
+                  </div>
+                  <form onsubmit="event.preventDefault(); addGroup()">
+                    <label for="groupContact">Group Name</label>
+                    <input type="text" minlength="3" id="groupContact" required class="form-control mt-25" placeholder="group name">
+                    <button type="submit" class="btn btn-sm btn-success">Add</button>
+                  </form>
+                </div>
+                
+                <div class="addIndContact  formAddContactJs " id="edit-group-name-form" style="display:none;">
+                  <div class="flex justify-content-sb mb-25">
+                    <h4>Edit Group Name</h4>
+                    <span onclick="closeAddPanel()">X</span>
+                  </div>
+                  <form onsubmit="event.preventDefault(); updateGroupName()">
+                    <label for="groupContact">Group Name</label>
+                    <input type="text" minlength="3" id="edit-group-name" required class="form-control mt-25" placeholder="group name">
+                    <button type="submit" class="btn btn-sm btn-success">Edit</button>
+                  </form>
+                </div>
+
+                <div class="ind-contact-all contactJs flex flex-dir-col align-item-center" id="all-user-contact">
+                </div>
+
+                <div class="ind-contact-grp contactJs flex flex-dir-col align-item-center" style="display:none;">
+
+                  <div class=" flex flex-dir-col align-item-center " id="all-user-grps" >
+
+                    <div class="ind-contact group-name ind-contact-width">
+                      <div class="flex">
+                        <div class="ab-avatar cursor" onclick="listMember()">G1</div>
+                        <div class="contact-info flex align-item-center justify-content-sb" >
+                          <h4 class="elipsis cursor" onclick="listMember()" >Group 1 </h4>
+                          <div class="flex ">
+                            <button class="btn btn-sm">Add</button>
+                            <button class="btn btn-sm btn-success ">Email</button>
+                            <button class="btn btn-sm btn-danger ">Delete</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  
+                  </div>
+                  
+                  <div class="group-members" style="display:none;" id="display-group-member">
+                    
+                  </div>
+                </div>
+
+                
+              </div>
+
+            </div>
+
+            <div class="col-1 right-in-main-lt">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-create" id='mobile-create' onclick="createContent(true)">
+        <i class="fas fa-pencil-alt"></i>
+      </div>
+      <div class="email-body">
+        <div class="email-header flex align-item-center justify-content-sb" style="display:none;" >
+          <p>New Message</p>
+          <span onclick="createContent()">X</span>
+        </div>
+        <div class="email-main-body" style="display:none;">
+          <form onsubmit="event.preventDefault(); sendMessage()" >
+              <input type="email" id="receipient" class="form-ctrl pt-25" required autocomplete="off" placeholder="Receipient">
+              <input type="text" id="subject" class="form-ctrl mt-25" required autocomplete="off" placeholder="Subject">
+            <div>
+              <textarea id="text-area" class="form-ctrl mt-25" required  cols="30" placeholder="Message Here" rows="10"></textarea>
+            </div>
+            <div class="mt-25 flex justify-content-sb ">
+              <button type="submit" class="btn btn-success" title="send message to user" 
+              >Send</button>
+              <button type="button" class=" btn btn-default" title="Saves message as draft"
+              onclick="saveDraft()">Draft</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div class="email-body" id="draft-display" style="display:none">
+        <div class="email-header flex align-item-center justify-content-sb" id="draft-head" style="display:none;" >
+          <p>New Message</p>
+          <span onclick="createContentFromDraft()">X</span>
+        </div>
+        <div class="email-main-body" id="draft-body" style="display:none;">
+          <form onsubmit="event.preventDefault(); sendDraftMessage()" >
+              <input type="email" id="draft-receipient" class="form-ctrl pt-25" required autocomplete="off" placeholder="Receipient">
+              <input type="text" id="draft-subject" class="form-ctrl mt-25" required autocomplete="off" placeholder="Subject">
+            <div>
+              <textarea id="draft-text-area" class="form-ctrl mt-25" required  cols="30" placeholder="Message Here" rows="10"></textarea>
+            </div>
+            <div class="mt-25 flex justify-content-sb ">
+              <button type="submit" class="btn btn-success" title="send message to user" 
+              >Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="email-body" id="resend-display" style="display:none">
+        <div class="email-header flex align-item-center justify-content-sb" id="resend-head" style="display:none;" >
+          <p>New Message</p>
+          <span onclick="closeResendForm()">X</span>
+        </div>
+        <div class="email-main-body" id="resend-body" style="display:none;">
+          <form onsubmit="event.preventDefault(); resendMessage()" >
+              <input type="email" id="resend-receipient" class="form-ctrl pt-25" required autocomplete="off" placeholder="Receipient">
+              <input type="text" id="resend-subject" class="form-ctrl mt-25" required autocomplete="off" placeholder="Subject">
+            <div>
+              <textarea id="resend-text-area" class="form-ctrl mt-25" required  cols="30" placeholder="Message Here" rows="10"></textarea>
+            </div>
+            <div class="mt-25 flex justify-content-sb ">
+              <button type="submit" class="btn btn-success" title="send message to user" 
+              >Resend</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="email-body" id="bulk-message">
+        <div class="email-header flex align-item-center justify-content-sb" id="bulk-header" style="display:none;" >
+          <p>Bulk Message</p>
+          <span onclick="closeBulkMessage()">X</span>
+        </div>
+        <div class="email-main-body" id="bulk-body" style="display:none;">
+          <form onsubmit="event.preventDefault(); postMessage()" id="bulk-form" >
+              <input type="text" id="bulk-subject" class="form-ctrl mt-25" required autocomplete="off" placeholder="Subject">
+            <div>
+              <textarea id="bulk-text-area" class="form-ctrl mt-25" required  cols="30" placeholder="Message Here" rows="10"></textarea>
+            </div>
+            <div class="mt-25 flex justify-content-sb ">
+              <button type="submit" class="btn btn-success" title="send message to user" 
+              >Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </main>
+  </div>
+<div id="myModal" class="modal">
+  <h4 id="modal-header" class="center-text modal-header"></h4>
+  <div class="modal-content">
+    <span class="close" id="close">&times;</span>
+    <p id="modal-body" class="center-text modal-body"></p>
+  </div>
+</div>
+  <script src="./js/index.js"></script>
+  <script src="./js/app/create-message.js"></script>
+  <script src="./js/app/app.js"></script>
+</body>
+
+</html>

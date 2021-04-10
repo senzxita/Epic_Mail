@@ -1,0 +1,1139 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: EPIC MAIL
+  description: >
+    An Amazing email sending App built with LOVE.
+  contact: {}
+host: epic-mail-ocf.herokuapp.com
+basePath: /
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+paths:
+  /api/v1/auth/signup:
+    post:
+      description: route to sign in user
+      summary: create an account
+      tags:
+      - users
+      operationId: ApiV1AuthSignupPost
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: firstname
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: lastname
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: email
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: password
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/createanaccount'
+          examples:
+            application/json; charset=utf-8:
+              status: 201
+              data:
+                token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiZnJhbmsiLCJsYXN0bmFtZSI6ImFuZ2VsbyIsImVtYWlsIjoiZnJhbmtAbWUuY29tIiwicGFzc3dvcmQiOiIkMmIkMDgkZUNjenlldHZ5dUZKb3M2clAxVDVhT1A3SzFhYy55SVZKVFRRRElsLm5JVlNSbERGdkdaOC4iLCJhdmF0YXIiOm51bGwsImNyZWF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTQ4WiIsInVwZGF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTUwWiIsImlhdCI6MTU1MjcyNzI1NSwiZXhwIjoxNTUzMzMyMDU1fQ.9SY4jfSHjsgMNbuPRbeJAtWo3LzANQDVQdugBslqRMY
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 477
+            ETag:
+              type: string
+              default: W/"1dd-lC5Ug0145iFw2SCLjTLH1TyDnrs"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 09:07:35 GMT
+            Connection:
+              type: string
+              default: keep-alive
+  /api/v1/auth/login:
+    post:
+      description: 'route to login user '
+      summary: login user
+      tags:
+      - users
+      operationId: ApiV1AuthLoginPost
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: email
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: password
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/loginuser'
+          examples:
+            application/json; charset=utf-8:
+              status: 200
+              data:
+                token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiZnJhbmsiLCJsYXN0bmFtZSI6ImFuZ2VsbyIsImVtYWlsIjoiZnJhbmtAbWUuY29tIiwicGFzc3dvcmQiOiIkMmIkMDgkZUNjenlldHZ5dUZKb3M2clAxVDVhT1A3SzFhYy55SVZKVFRRRElsLm5JVlNSbERGdkdaOC4iLCJhdmF0YXIiOm51bGwsImNyZWF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTQ4WiIsInVwZGF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTUwWiIsImlhdCI6MTU1MjcyNzU1MCwiZXhwIjoxNTUzMzMyMzUwfQ.OMdPnUf3sDIlUY849kTb3Fx8liKyPkrfitolHgZgwh8
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 477
+            ETag:
+              type: string
+              default: W/"1dd-XtYujnMMO4Wq7bl3okT4ZMb7I5M"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 09:12:30 GMT
+            Connection:
+              type: string
+              default: keep-alive
+  /api/v1/auth/reset:
+    post:
+      description: 'TODO: Add Description'
+      summary: sent reset password link
+      tags:
+      - users
+      operationId: ApiV1AuthResetPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: email
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /api/v1/messages:
+    post:
+      description: create and send email to another user
+      summary: create and send message
+      tags:
+      - messages
+      operationId: ApiV1MessagesPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: subject
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: message
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: status
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: recieversEmail
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+    get:
+      description: get all users messages as inbox messages
+      summary: get inbox messages
+      tags:
+      - messages
+      operationId: ApiV1MessagesGet
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/getinboxmessages'
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 465
+            ETag:
+              type: string
+              default: W/"1d1-n3K3IJx0AQ/+U70EdMnV/tG51NQ"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 10:12:29 GMT
+            Connection:
+              type: string
+              default: keep-alive
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/tokenunavailable'
+          examples:
+            application/json:
+              status: 401
+              error:
+              - Token is not provided
+  /api/v1/messages/sent:
+    get:
+      description: 'get all users sent messages '
+      summary: get sent messages
+      tags:
+      - messages
+      operationId: ApiV1MessagesSentGet
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/getsentmessages'
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 429
+            ETag:
+              type: string
+              default: W/"1ad-SuuPfXfIYwFIekasYDTMd4gNsaM"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 10:28:33 GMT
+            Connection:
+              type: string
+              default: keep-alive
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/tokenunavailable'
+          examples:
+            application/json:
+              status: 401
+              error:
+              - Token is not provided
+  /api/v1/messages/unread:
+    get:
+      description: 'gets all users unread messages '
+      summary: get users unread messages
+      tags:
+      - messages
+      operationId: ApiV1MessagesUnreadGet
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/getusersunreadmessages'
+          examples:
+            application/json; charset=utf-8:
+              status: 200
+              data:
+              - id: 3
+                subject: 'congrates '
+                message: ' dear, frank heard about you joining andela. more greatness man. God bless'
+                parentmessageid: 
+                status: sent
+                receiverid: 1
+                senderid: 2
+                read: true
+                createdon: 2019-03-16T08:27:08.981Z
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 260
+            ETag:
+              type: string
+              default: W/"104-QM1w21kOM/62JAqvkRUUub799RI"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 11:02:24 GMT
+            Connection:
+              type: string
+              default: keep-alive
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/tokenunavailable'
+          examples:
+            application/json:
+              status: 401
+              error:
+              - Token is not provided
+  /api/v1/messages/1:
+    get:
+      description: get a particular users email from the inbox
+      summary: get a particular  email message
+      tags:
+      - messages
+      operationId: ApiV1Messages1Get
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          schema:
+            $ref: '#/definitions/getaparticularInboxmessage'
+          examples:
+            application/json; charset=utf-8:
+              status: 200
+              data:
+              - id: 3
+                subject: 'congrates '
+                message: ' dear, frank heard about you joining andela. more greatness man. God bless'
+                parentmessageid: 
+                status: sent
+                receiverid: 1
+                senderid: 2
+                read: true
+                createdon: 2019-03-16T08:27:08.981Z
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 260
+            ETag:
+              type: string
+              default: W/"104-QM1w21kOM/62JAqvkRUUub799RI"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 11:27:45 GMT
+            Connection:
+              type: string
+              default: keep-alive
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/tokenunavailable'
+          examples:
+            application/json:
+              status: 401
+              error:
+              - Token is not provided
+  /api/v1/messages/3:
+    delete:
+      description: 'user can delete message '
+      summary: delete  message
+      tags:
+      - messages
+      operationId: ApiV1Messages3Delete
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        202:
+          description: ''
+          schema:
+            $ref: '#/definitions/deletemessage'
+          examples:
+            application/json; charset=utf-8:
+              status: 202
+              data:
+              - message: deleted successfully
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 58
+            ETag:
+              type: string
+              default: W/"3a-YU6BJFz6mKfslKs4PP/+b8msSdg"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 13:12:30 GMT
+            Connection:
+              type: string
+              default: keep-alive
+        401:
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/tokenunavailable'
+          examples:
+            application/json:
+              status: 401
+              error:
+              - Token is not provided
+  /api/v1/groups:
+    post:
+      description: A user can own and create a group
+      summary: create group
+      tags:
+      - groups
+      operationId: ApiV1GroupsPost
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: name
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        201:
+          description: ''
+          schema:
+            $ref: '#/definitions/creategroup'
+          examples:
+            application/json; charset=utf-8:
+              status: 201
+              message: draft saved successfully
+              data:
+              - id: 1
+                name: group 1
+                role: admin
+                ownerid: 1
+                createdat: 2019-03-16T18:18:44.147Z
+                updatedat: 2019-03-16T18:18:44.148Z
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 191
+            ETag:
+              type: string
+              default: W/"bf-BduW5adAuTVxaW4nRT9ku7wzT7M"
+            Date:
+              type: string
+              default: Sat, 16 Mar 2019 19:18:44 GMT
+            Connection:
+              type: string
+              default: keep-alive
+    get:
+      description: get all groups that belongs to a user
+      summary: get groups
+      tags:
+      - groups
+      operationId: ApiV1GroupsGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /api/v1/groups/1/name:
+    patch:
+      description: a user can update a group name they own
+      summary: update group name
+      tags:
+      - groups
+      operationId: ApiV1Groups1NamePatch
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: name
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /api/v1/groups/3:
+    delete:
+      description: user can delete group they belong to
+      summary: delete group
+      tags:
+      - groups
+      operationId: ApiV1Groups3Delete
+      deprecated: false
+      produces:
+      - application/json; charset=utf-8
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        202:
+          description: ''
+          schema:
+            $ref: '#/definitions/deletegroup'
+          examples:
+            application/json; charset=utf-8:
+              status: 202
+              data:
+              - message: deleted successfully
+          headers:
+            X-Powered-By:
+              type: string
+              default: Express
+            Access-Control-Allow-Origin:
+              type: string
+              default: '*'
+            Access-Control-Allow-Headers:
+              type: string
+              default: X-Requested-With
+            Content-Length:
+              type: string
+              default: 58
+            ETag:
+              type: string
+              default: W/"3a-YU6BJFz6mKfslKs4PP/+b8msSdg"
+            Date:
+              type: string
+              default: Sun, 17 Mar 2019 00:33:57 GMT
+            Connection:
+              type: string
+              default: keep-alive
+  /api/v1/groups/4/users:
+    post:
+      description: A user can add different users to there group
+      summary: add users to a group
+      tags:
+      - groups
+      operationId: ApiV1Groups4UsersPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: emails[]
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /api/v1/groups/4/users/1:
+    delete:
+      description: A user can remove a user they have in their group
+      summary: remove member
+      tags:
+      - groups
+      operationId: ApiV1Groups4Users1Delete
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /127.0.0.1:4000/api/v1/groups/1/messages:
+    post:
+      description: user can send a group message
+      summary: send a group message
+      tags:
+      - groups
+      operationId: 1270014000ApiV1Groups1MessagesPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: subject
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: message
+        in: formData
+        required: true
+        type: string
+        description: ''
+      - name: status
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /api/v1/contacts:
+    post:
+      description: a new contact to a user
+      summary: create contacts
+      tags:
+      - contacts
+      operationId: ApiV1ContactsPost
+      deprecated: false
+      produces:
+      - application/json
+      consumes:
+      - application/x-www-form-urlencoded
+      parameters:
+      - name: Content-Type
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      - name: email
+        in: formData
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+    get:
+      description: 'TODO: Add Description'
+      summary: get all user  contacts
+      tags:
+      - contacts
+      operationId: ApiV1ContactsGet
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+  /api/v1/contacts/1:
+    delete:
+      description: user can delete a user they own
+      summary: delete contact
+      tags:
+      - contacts
+      operationId: ApiV1Contacts1Delete
+      deprecated: false
+      produces:
+      - application/json
+      parameters:
+      - name: x-access-token
+        in: header
+        required: true
+        type: string
+        description: ''
+      responses:
+        200:
+          description: ''
+          headers: {}
+definitions:
+  createanaccount:
+    title: createanaccount
+    example:
+      status: 201
+      data:
+        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiZnJhbmsiLCJsYXN0bmFtZSI6ImFuZ2VsbyIsImVtYWlsIjoiZnJhbmtAbWUuY29tIiwicGFzc3dvcmQiOiIkMmIkMDgkZUNjenlldHZ5dUZKb3M2clAxVDVhT1A3SzFhYy55SVZKVFRRRElsLm5JVlNSbERGdkdaOC4iLCJhdmF0YXIiOm51bGwsImNyZWF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTQ4WiIsInVwZGF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTUwWiIsImlhdCI6MTU1MjcyNzI1NSwiZXhwIjoxNTUzMzMyMDU1fQ.9SY4jfSHjsgMNbuPRbeJAtWo3LzANQDVQdugBslqRMY
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        $ref: '#/definitions/Data'
+    required:
+    - status
+    - data
+  Data:
+    title: Data
+    type: object
+    properties:
+      token:
+        type: string
+    required:
+    - token
+  loginuser:
+    title: loginuser
+    example:
+      status: 200
+      data:
+        token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZmlyc3RuYW1lIjoiZnJhbmsiLCJsYXN0bmFtZSI6ImFuZ2VsbyIsImVtYWlsIjoiZnJhbmtAbWUuY29tIiwicGFzc3dvcmQiOiIkMmIkMDgkZUNjenlldHZ5dUZKb3M2clAxVDVhT1A3SzFhYy55SVZKVFRRRElsLm5JVlNSbERGdkdaOC4iLCJhdmF0YXIiOm51bGwsImNyZWF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTQ4WiIsInVwZGF0ZWRhdCI6IjIwMTktMDMtMTZUMDg6MDc6MzUuMTUwWiIsImlhdCI6MTU1MjcyNzU1MCwiZXhwIjoxNTUzMzMyMzUwfQ.OMdPnUf3sDIlUY849kTb3Fx8liKyPkrfitolHgZgwh8
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        $ref: '#/definitions/Data'
+    required:
+    - status
+    - data
+  getinboxmessages:
+    title: getinboxmessages
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data3'
+    required:
+    - status
+    - data
+  Data3:
+    title: Data3
+    type: object
+    properties:
+      id:
+        example: 3
+        type: integer
+        format: int32
+      subject:
+        example: 'congrates '
+        type: string
+      message:
+        example: ' dear, frank heard about you joining andela. more greatness man. God bless'
+        type: string
+      parentmessageid:
+        type: string
+      status:
+        example: sent
+        type: string
+      receiverid:
+        example: 1
+        type: integer
+        format: int32
+      senderid:
+        example: 2
+        type: integer
+        format: int32
+      read:
+        example: false
+        type: boolean
+      createdon:
+        example: 2019-03-16T08:27:08.981Z
+        type: string
+    required:
+    - id
+    - subject
+    - message
+    - status
+    - receiverid
+    - senderid
+    - read
+    - createdon
+  getsentmessages:
+    title: getsentmessages
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data3'
+    required:
+    - status
+    - data
+  tokenunavailable:
+    title: tokenunavailable
+    example:
+      status: 401
+      error:
+      - Token is not provided
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      error:
+        type: array
+        items:
+          type: string
+    required:
+    - status
+    - error
+  getusersunreadmessages:
+    title: getusersunreadmessages
+    example:
+      status: 200
+      data:
+      - id: 3
+        subject: 'congrates '
+        message: ' dear, frank heard about you joining andela. more greatness man. God bless'
+        parentmessageid: 
+        status: sent
+        receiverid: 1
+        senderid: 2
+        read: true
+        createdon: 2019-03-16T08:27:08.981Z
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data3'
+    required:
+    - status
+    - data
+  getaparticularInboxmessage:
+    title: getaparticularInboxmessage
+    example:
+      status: 200
+      data:
+      - id: 3
+        subject: 'congrates '
+        message: ' dear, frank heard about you joining andela. more greatness man. God bless'
+        parentmessageid: 
+        status: sent
+        receiverid: 1
+        senderid: 2
+        read: true
+        createdon: 2019-03-16T08:27:08.981Z
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data3'
+    required:
+    - status
+    - data
+  deletemessage:
+    title: deletemessage
+    example:
+      status: 202
+      data:
+      - message: deleted successfully
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data7'
+    required:
+    - status
+    - data
+  Data7:
+    title: Data7
+    type: object
+    properties:
+      message:
+        example: deleted successfully
+        type: string
+    required:
+    - message
+  creategroup:
+    title: creategroup
+    example:
+      status: 201
+      message: draft saved successfully
+      data:
+      - id: 1
+        name: group 1
+        role: admin
+        ownerid: 1
+        createdat: 2019-03-16T18:18:44.147Z
+        updatedat: 2019-03-16T18:18:44.148Z
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      message:
+        type: string
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data8'
+    required:
+    - status
+    - message
+    - data
+  Data8:
+    title: Data8
+    type: object
+    properties:
+      id:
+        example: 1
+        type: integer
+        format: int32
+      name:
+        example: group 1
+        type: string
+      role:
+        example: admin
+        type: string
+      ownerid:
+        example: 1
+        type: integer
+        format: int32
+      createdat:
+        example: 2019-03-16T18:18:44.147Z
+        type: string
+      updatedat:
+        example: 2019-03-16T18:18:44.148Z
+        type: string
+    required:
+    - id
+    - name
+    - role
+    - ownerid
+    - createdat
+    - updatedat
+  deletegroup:
+    title: deletegroup
+    example:
+      status: 202
+      data:
+      - message: deleted successfully
+    type: object
+    properties:
+      status:
+        type: integer
+        format: int32
+      data:
+        type: array
+        items:
+          $ref: '#/definitions/Data7'
+    required:
+    - status
+    - data
+tags:
+- name: users
+  description: user routes which includes sign in and sign out
+- name: messages
+  description: route that contains messages endpoints
+- name: groups
+  description: all group routes
+- name: contacts
+  description: >
+    end points to contacts

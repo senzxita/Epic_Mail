@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+    
+    postgres:
+        image: "postgres:9-alpine"
+        container_name: postgres
+        environment:
+            POSTGRES_DATABASE: epic_database
+            POSTGRES_USER: epic_user
+            POSTGRES_PASSWORD: epic_password
+        ports: 
+            - "4570:4570"
+        
+
+    web:
+        build:
+            context: ./
+            dockerfile: ./server/Dockerfile
+        container_name: node_epic
+        environment: 
+            DATABASE_SERVER: postgres
+            POSTGRES_DATABASE: epic_database
+            POSTGRES_USER: epic_user
+            POSTGRES_PASSWORD: epic_password
+        
+        ports:
+            - "5800:5800"
+        links:
+            - postgres
+
+    ui:
+        build: ./UI
+        container_name: ui
+        ports:
+            - "7690:8080"
+        links:
+            - web
+    
+        
+    
+        

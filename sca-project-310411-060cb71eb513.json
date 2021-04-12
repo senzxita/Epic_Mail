@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sca-project-310411",
+  "private_key_id": "060cb71eb51381bb68057eddb2f30d32a94661e5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEuwIBADANBgkqhkiG9w0BAQEFAASCBKUwggShAgEAAoIBAQDGbNdGfSvZz9j8\nDJrTMP0jFtUu5LxGJwr0P+zdEbmI42BARH7+MGR0E/+ULTF5yt73/I9LgSOsuqc5\nnQTJPPBm0vq0o7u/Rc9+sDZ5e8wNfeeYLS1mIUq15a/QFDd9oX08b4cFJfnNVUIH\nAGLSqQTeeztk1IixX4fLHM/UlQVOE1BWkuYq/Z1YTpwA3vXRpu/63xCjQzJpuhtH\nH9Vr/CXiuKoiKOi9b3/DL6svkUikO4vuVqf2dVTmclbJb+uW1FbMzzEr7Cjj/h4c\nbhUsoIPFOsW/hoX9Z9ByYseNzp5+KPRPsrD+KvZHLx/OBoHp8AKpiIFDdiTCTc2r\nJfXS6sUjAgMBAAECgf8Rxv1bKLRfT1bV6M55hmoT0bLyg+ESJkyC5FgcigCO1smr\nRyJoVOB2mZW4pv6P+0RuT0LI+mnE8mOzu92hf0cRHT7pUq5bXa4Bm0tGIOg+MvKQ\nKS1AtES4XJbJlEEv9mwKL1ZCFfpBnHjUfRbTqAi9y8/sLtzVO+SCV+fQt6N2jFcX\nZYQd5x38f4Tzf7gYlH+Sdz2RzPbquQog961AtpFXZtYZe4NB/v829AZtq6EVJudh\nhiMlK4ybX29XIt1ZsToRyOEZ8oGSonTuHqoH7raqND9VfpFcbzkiWcLknuabqwML\nsMKp1BTBxQlCEN/OWCYny93vQMV9jwcJah13r1kCgYEA6oAViRgtGWobB1MeXw5g\nCGz3OySYdcUXIFIz25oxC9tW1Yx8y1tQARuTUDiH7QYI1UCimB2+xFxrHfwd50Nj\njOOkKYrlrYFRvrEdoolydx2oALSk0PPrQl2MtdSwpYwuhinUTnfH/+RrQxjePZZL\n64tyxTm2RMMTbNJlI8gaAmkCgYEA2J4K+Xjjp6eDXZSBup9PuaN8BuXz6JQXzdIS\nEEJ+i3fEli47iFBH3eT7s0n/II53jRlnA/EK98SQ/Hf03LH23gcW/uJaSBNmpBku\nVuk4V41yjPQBkbsv6p09+q78f8O0jD7xAWtZ7/7VDcQwF2SE96N88Y3rgmm6P97W\nl9SqwasCgYBDSITlVR57kEo5C8xHEeTUBg/Z1GI6SFaeW3etpswzzrdXhnu4DXcj\nGjpmZhH6HCUkqur8Imy+ApZpgBFEbb1+i0Jq+QN1iQlfYYpTPISvUL8HlM1Fdvcl\nj5n0Aha9KT+gFxhne07TSULNebEqkpkt+FDx7eEyUZadPrDuV1e/IQKBgEcJbSfq\n0R2F/bqOnQyKeiayylWoy5gWGMhSf8H9TGqIWFu3xaYqTacjFLfzKEuQ7PvEvNe6\nEJK4T6O74v0ND5w4Tv4/VMQWOK7P4zZ1PRjZNhurWWhlLo2OC2lOQVfU4jyr13VT\nsybVNyFQmUTSnhhn8O12USlvarjPZyhbgbQJAoGBAKAGwv662BXWmdHSh87SbxZf\nVV3JZ0uMmp/BkmMnaaESdlZ3nsnsPpezdxPr1sgTpco0OCHmMvh7cNTs0x2F3Jkh\njzzin1tkwlesV36I/O1EBaN3Nu+HstoSgtQnW1/c+yWiZMyYPOlkz69I5NVWc4b3\nafzJ4Waqp7Djl3Cl4xW0\n-----END PRIVATE KEY-----\n",
+  "client_email": "sca-service@sca-project-310411.iam.gserviceaccount.com",
+  "client_id": "112833640884818332947",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sca-service%40sca-project-310411.iam.gserviceaccount.com"
+}
